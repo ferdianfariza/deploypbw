@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>Ferdian's Playlist</title>
     <link rel="icon" href="img/fe.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css" />
     <link
@@ -61,6 +62,41 @@
     </style>
   </head>
   <body>
+
+  <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-md-4">
+            <h2 class="text-center">Login</h2>
+            <form method="POST" action="">
+               <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" name="username" class="form-control" required>
+               </div>
+               <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" class="form-control" required>
+               </div>
+               <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+               $username = $_POST['username'];
+               $password = $_POST['password'];
+
+               // Dummy credentials for demonstration
+               $valid_username = 'admin';
+               $valid_password = 'password';
+
+               if ($username === $valid_username && $password === $valid_password) {
+                  echo '<p class="text-success text-center">Login successful!</p>';
+               } else {
+                  echo '<p class="text-danger text-center">Invalid username or password.</p>';
+               }
+            }
+            ?>
+         </div>
+      </div>
+   </div>
 
     
     <script
@@ -271,6 +307,10 @@
               >
               <h3 class="mb-3">Single Drop</h3>
               <p class="card-text mb-auto">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content.
+              </p>
+              <p class="bg-teal">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content.
               </p>

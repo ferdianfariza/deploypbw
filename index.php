@@ -62,43 +62,6 @@
     </style>
   </head>
   <body>
-
-  <div class="container">
-      <div class="row justify-content-center">
-         <div class="col-md-4">
-            <h2 class="text-center">Login</h2>
-            <form method="POST" action="">
-               <div class="form-group">
-                  <label for="username">Username:</label>
-                  <input type="text" id="username" name="username" class="form-control" required>
-               </div>
-               <div class="form-group">
-                  <label for="password">Password:</label>
-                  <input type="password" id="password" name="password" class="form-control" required>
-               </div>
-               <button type="submit" class="btn btn-primary btn-block">Login</button>
-            </form>
-            <?php
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-               $username = $_POST['username'];
-               $password = $_POST['password'];
-
-               // Dummy credentials for demonstration
-               $valid_username = 'admin';
-               $valid_password = 'password';
-
-               if ($username === $valid_username && $password === $valid_password) {
-                  echo '<p class="text-success text-center">Login successful!</p>';
-               } else {
-                  echo '<p class="text-danger text-center">Invalid username or password.</p>';
-               }
-            }
-            ?>
-         </div>
-      </div>
-   </div>
-
-    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -159,6 +122,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
             </li>
           </ul>
           <form class="d-flex " role="search">
